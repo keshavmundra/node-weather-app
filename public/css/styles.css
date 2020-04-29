@@ -9,6 +9,16 @@ body {
     min-height: 100vh
 }
 
+form{
+    float: left;
+}
+
+form>input{
+    border : 1px solid #cccccc;
+    padding: 8px;
+    width: 200px;
+}
+
 .main-content {
     flex-grow: 1;
 }
@@ -44,11 +54,7 @@ header a {
     width: 250px;
 }
 
-input{
-    border : 1px solid #cccccc;
-    padding: 8px;
-    width: 50%;
-}
+
 
 button{
     cursor: pointer;
@@ -92,14 +98,14 @@ button:hover{
 
 #geo_img{
     float : right;
-    height: 40px;
+    height: 37px;
     width: 40px;
     cursor: pointer;
+    margin-left: 40px;
 }
 
 /*<--tooltip-->*/
 .tooltip {
-    float: right;
     position: relative;
     display: inline-block;
   }
@@ -107,7 +113,7 @@ button:hover{
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: #888888;
     color: #fff;
     text-align: center;
     border-radius: 6px;
@@ -117,7 +123,7 @@ button:hover{
     position: absolute;
     z-index: 1;
     top: -5px;
-    right: 105%;
+    left: 105%;
   }
   
   .tooltip:hover .tooltiptext {
