@@ -46,7 +46,7 @@ app.get('/help', (req,res)=>{
 app.get('/weather', (req,res)=>{
     if(!req.query.address){
         return res.send({
-            error : "please proivde a address to search for"
+            error : "please proivde a address to search for !!!"
         })
     }
 

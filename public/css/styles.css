@@ -4,7 +4,6 @@ body {
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh
@@ -64,4 +63,31 @@ button:hover{
     background: black;
     color: white;
     padding: 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    color: #404040;
+    transition: 0.3s;
+    width: 90%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+  }
+ 
+.loc{
+    font-size: large;
+    color: 	#484848;
+    font-size: 30px;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+input{
+    width: 50%;
 }
