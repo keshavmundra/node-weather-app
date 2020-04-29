@@ -47,6 +47,7 @@ header a {
 input{
     border : 1px solid #cccccc;
     padding: 8px;
+    width: 50%;
 }
 
 button{
@@ -88,6 +89,9 @@ button:hover{
     font-style: italic;
 }
 
-input{
-    width: 50%;
+
+#geo_img{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
 }

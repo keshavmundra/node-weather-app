@@ -4,6 +4,7 @@ const hbs = require('hbs');
 
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const reverse_geocode = require('./utils/reverse_geocode')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -44,6 +45,7 @@ app.get('/help', (req,res)=>{
 })
 
 app.get('/weather', (req,res)=>{
+    
     if(!req.query.address){
         return res.send({
             error : "please proivde a address to search for !!!"
@@ -72,6 +74,37 @@ app.get('/weather', (req,res)=>{
     })
 })
 
+//reverse geo coding
+app.get('/geo_loc', (req,res)=>{
+
+    if(!req.query.latitude && !req.query.longitude)
+    {
+        return res.send({
+            error : "Unable to fetch your location !!!"
+        })
+    }
+
+    reverse_geocode(req.query.latitude,req.query.longitude,(error,{location}="") =>{
+        if(error)
+        {
+            return res.send({
+                error
+            })
+        }
+        forecast(req.query.latitude,req.query.longitude, (error, forecastData) => {
+            if(error){
+                return res.send({
+                    error
+                })
+            }
+            return res.send({
+                forecast : forecastData,
+                location : location
+            })
+        })
+    })
+})
+
 app.get('/help/*',(req,res)=>{
     res.render('404',{
         title : "404",
@@ -84,7 +117,7 @@ app.get('*',(req,res)=>{
     res.render('404',{
         title : "404",
         name : "Keshav Mundra",
-        errorMessage : "PAge not found"
+        errorMessage : "Page not found"
     })
 })
 
