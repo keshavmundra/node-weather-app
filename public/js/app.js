@@ -32,6 +32,7 @@ var geo_img = document.getElementById("geo_img");
 geo_img.addEventListener('click',()=>{
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
+    search.value = ""
     getLocation()
 })
 
