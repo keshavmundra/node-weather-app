@@ -19,13 +19,19 @@
                 >
             </h2>
             <h3>Contact : +91-9462972064</h3>
-            <h3>Mail : <a href="mailto:keshavmundra1996@gmail.com" target="_blank">keshavmundra1996@gmailcom</a></h3> 
+            <h3>Mail : <a href="mailto:keshavmundra1996@gmail.com?subject=I want to have my own website&body=Keshav, I am interested  in having my own website can you contact at my mail for further info" target="_blank">keshavmundra1996@gmailcom</a></h3> 
         </div>
         {{>footer}}
 
         <script>
             function deeplink(){
-                const url = "https://wa.me/919462972064?text=hi"
+                var name = prompt("Enter your name : ");
+                if(name === null){
+                    return
+                }else{
+                    var name_val = name ? "it's%20"+name : ""
+                }
+                const url = "https://wa.me/919462972064?text=Hi%20Keshav%20"+name_val
                 window.open(url);
             }
         </script>
